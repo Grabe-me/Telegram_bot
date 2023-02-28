@@ -8,7 +8,8 @@ dp = Dispatcher(bot)
 import random
 @dp.message_handler(commands=['start'])
 async def start_command(message: types.Message):
-    await message.answer(f'Привет! Напиши, сколько символов'
+    user_name = message.from_user.username
+    await message.answer(f'Привет, {user_name}! Напиши, сколько символов'
                          'должен быть пароль, максимум 72 символа.')
 @dp.message_handler()
 async def get_password(message: types.Message):
