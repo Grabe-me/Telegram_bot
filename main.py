@@ -31,7 +31,7 @@ async def get_password(message: types.Message):
             for password in range(1, 6):
                 password = ''.join(random.sample(all, passlength))
                 await message.answer(f"\t{password}")
-                start = f"@dp.message_handler(commands=['start'])"
+                #start = f"@dp.message_handler(commands=['start'])"
             if passlength < 6:
                 await message.answer('Пароль меньше 6 символов считается "слабым"')
             await message.answer('Можем попробовать снова. Просто нажми /start')
